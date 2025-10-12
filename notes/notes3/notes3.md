@@ -4,7 +4,7 @@
 
 ### What is a graphical user interface (GUI)?
 
-A form of user interface that allows users to interact with computing devices using visual elements such as icons, buttons, and menus as opposed to text-based interfaces. It is an interactive layer between the user and the machine. The GUI translates user actions such as clicks and drags into system-level commands, making computing accessible without the user having to memorize command syntax.  
+GUI is a form of user interface that allows users to interact with computing devices using visual elements such as icons, buttons, and menus as opposed to text-based interfaces. It is an interactive layer between the user and the machine. The GUI translates user actions such as clicks and drags into system-level commands, making computing accessible without the user having to memorize command syntax.  
 
 ### What is a desktop environment?
 
@@ -20,7 +20,7 @@ There are two ways to access the command line interface, through a virtual conso
 
 ### What is a virtual console?
 
-A text-based login session that runs independently of the graphical environment, able to be brought up at any time through use of `Alt+F1` through `Alt+F6`. Each TTY is a separate session with its own login instance.
+A text-based login session that runs independently of the graphical environment, able to be brought up at any time through use of `Ctrl+Alt+F1` through `Ctrl+Alt+F6`. Each TTY is a separate session with its own login instance. To exit the virtual console to return to the GUI, use `Ctrl+Alt+F7`.
 
 ### What is a terminal emulator?
 
@@ -32,7 +32,7 @@ Bash, which stands for Bourne Again SHell, is a command line interpreter and def
 
 ### What is the shell prompt?
 
-The configurable text string that displays system information and waits for user input, usually showing the username, hostname, and current directory.  
+The configurable text string that displays system information and waits for user input, usually showing the username, hostname, and current directory. A default format would be `user@hostname:~/path$`. 
 
 ## Definition, usage, and examples of the following commands  
 
