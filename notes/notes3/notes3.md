@@ -4,7 +4,7 @@
 
 ### What is a graphical user interface (GUI)?
 
-A form of user interface that allows users to interact with devices using visual elements like icons, buttons, and menus as opposed to text-based interfaces. It is a graphical layer between the user and the machine. The GUI translates user actions such as clicks and drags into system-level commands, making computing accessible without the user having to memorize command syntax.  
+A form of user interface that allows users to interact with computing devices using visual elements such as icons, buttons, and menus as opposed to text-based interfaces. It is an interactive layer between the user and the machine. The GUI translates user actions such as clicks and drags into system-level commands, making computing accessible without the user having to memorize command syntax.  
 
 ### What is a desktop environment?
 
@@ -16,11 +16,11 @@ The command line interface is the text based interface where the user inputs com
 
 ### How do I access the command line interface (CLI)?
 
-There are two ways to access the command line interface, through a virtual console or through a terminal emulator. 
+There are two ways to access the command line interface, through a virtual console (direct kernel level TTY) or through a terminal emulator (GUI applications that simulate terminal behavior). 
 
 ### What is a virtual console?
 
-A text-based login session that runs independently of the graphical environment, able to be brought up at any time through use of `Alt+F1` through `Alt+F6`
+A text-based login session that runs independently of the graphical environment, able to be brought up at any time through use of `Alt+F1` through `Alt+F6`. Each TTY is a separate session with its own login instance.
 
 ### What is a terminal emulator?
 
