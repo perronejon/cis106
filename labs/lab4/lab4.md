@@ -1,5 +1,5 @@
 # Lab 4 Submission
-*This lab was completed in Fedora Linux using DNF package manager instead of APT.*
+*This lab was completed in Fedora Linux using the DNF package manager instead of APT.*
 ## Using DNF
 ### q1.1
 
