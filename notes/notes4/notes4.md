@@ -1,64 +1,74 @@
-# How to install and remove software using APT and DNF
+# How to install and remove software
+
 ### What is the difference between APT and DNF?
+
+APT and DNF are package managers for different Linux distribution families. APT is Debian/Ubuntu's, using .deb packages, while DNF is Fedora/RHEL/CentOS and uses .rpm packages.
+
 ## Installing software
 
 ### How do you find software?
-For both `dnf` and `apt`, you can use the `search` feature in order to find 
+```
+dnf search package
+
+package-name.x86-64            Package that does...
+```
+
+In both `dnf` and `apt`, you can use the `search` feature in order to find specific software or packages.
 
 ### How do you install software?
-Using the package name, use `sudo dnf` or `sudo apt` and `install`
+```
+sudo dnf install package-name
+[sudo] password for user:
+(installation process)
+Complete!
+```
+
+Using the name found in `search`, `install` to download and install the specified package with dependencies. This requires `sudo` privileges. 
+
+### How do you remove software?
+
+
+
+#### Removal
+
+```
+sudo dnf remove package-name
+```
+
+To remove a package, use `remove`, though this retains config files.
+
+#### Cache Cleaning
+```
+sudo dnf clean all && sudo dnf autoremove
+```
+These two commands clear the package cache and removes unnecessary dependencies.
 
 ## Shell Scripting
 
-### Setup
-To create a shell or bash script, first create a file with the `.sh` extension.
+### Step 1: Create the Script File
+Create a file with the `.sh` extension:
 
-Then, with a text editor, open the empty `.sh` file and type `#!/bin/bash`, the shebang (or hashbang), in order to let the kernel know this will be ran through bash at `/bin/bash`.
+![e1.1](e1.1.png)
 
-### Content
-Once the initial foundation for the script is set, there are a number of considerations to be made in running the script.
+### Step 2: Add the Shebang
+Open the file in a text editor and add the shebang line as the first line:
 
-1. **Commands** 
+![e1.2](e1.2.png)
 
-You may add commands to the file as if using the terminal emulator or 
+This tells the system to execute the script using the Bash interpreter located at `/bin/bash`.
 
-```
-echo "Starting..."
-mkdir -p /tmp/tempfile
-cd /tmp/tempfile
-```
+### Step 3: Add Commands
+Write your commands line by line, just as you would in the terminal:
 
-2. **Variables**
+![e1.3](e1.3.png)
 
-You may choose to use variables if you need to call the same variable multiple times in the script. This ensures script flexibility. Define the variable, `VAR = "systemname"` then call it with the `$VAR` format. 
+### Step 4: Make it Executable
+Before running the script, give it execute permissions:
 
-```
-VAR = "hostname"
+![e1.4](e1.4.png)
 
-echo "The hostname is $VAR."
-```
+### Step 5: Run the script
 
-3. **Control flow**
+Execute the script using `./`:
 
-Conditional statements
-
-```
-if [ -f "/etc/config.conf]; then
-    echo "Config exists!"
-else
-    echo "We're screwed..."
-fi
-```
-
-4. **Loops**
-
-To do multiple actions repeatedly, use `for` loops. 
-
-```
-for zip_file in *.zip; do
-    [-e ]
-    echo "Extracting $zip_file"
-```
-
-5. **Functions**
-
+![e1.5](e1.5.png)
