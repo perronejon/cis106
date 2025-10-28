@@ -111,5 +111,3 @@ Git is a distributed version control software system allowing for version manage
 ### 17. What is GitHub?
 
 Github is a developer platform owned by Microsoft using git as the version control, hosting open source development projects. Adds webui to git, pull requests, issues, and actions (CI/CD)
-
-## Concepts I did not understand
