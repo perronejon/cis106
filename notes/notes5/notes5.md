@@ -22,17 +22,34 @@ total 3832
 ## cd
 - changes the working directory
 
-What is a variable?
-A variable is 
-How do I use a variable?
+## What is a variable?
+
+A variable is a named container that holds data. They allow for reuse and dynamic scripting without hardcoding values.
+
+## How do I use a variable?
+
+Variables are used to retrieve commonly used information. 
 
 ### What is an environment variable?
+
+Environment variables are exported to the environment or the process's memory space. These variables are inherited by any child processes spawned by the process. The command `env` prints a view of all exported variables. 
+
 ### What is a user defined variable?
+
+User defined variables are local to the current shell session. They are used temporarily, for loops, or for script-local configuration. 
+
 ### What is the root directory?
+
 The root directory is the common origin of the Linux / UNIX filetree.
+
 ### What does “Parent Directory” mean?
+
 A parent directory is 
+
 ### What does “Current working directory” mean?
+
 ### What is an absolute path? Include an example
+
 ### What is a relative path? Include an example
+
 ### What is the difference between “Your home directory” and “The home directory”?
