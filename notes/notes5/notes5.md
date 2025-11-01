@@ -1,5 +1,4 @@
 # Notes 5
-##
 
 ## ls
 - list files inside of a directory. 
@@ -47,25 +46,25 @@ A variable is a named container that holds data. They allow for reuse and dynami
 
 Variables are used to retrieve commonly used information. In order to define a user variable in a script 
 
-### What is an environment variable?
+## What is an environment variable?
 
 Environment variables are exported to the environment or the process's memory space. These variables are inherited by any child processes spawned by the process. The command `env` prints a view of all exported variables. 
 
-### What is a user defined variable?
+## What is a user defined variable?
 
 User defined variables are local to the current shell session. They are used temporarily, for loops, or for script-local configuration. 
 
-### What is the root directory?
+## What is the root directory?
 
 The root directory is the common origin of the Linux / UNIX filetree. All files on the Linux filesystem descend from the root directory. The root directory is denoted by a single forward slash, `/`. 
 
 It contains system directories such as `/home`, `/bin`, `/usr`, and `/bin`.
 
-### What does “Parent Directory” mean?
+## What does “Parent Directory” mean?
 
 A parent directory is the directory one level up from the current location. Every file has a parent except for the root directory.
 
-### What does “Current working directory” mean?
+## What does “Current working directory” mean?
 
 The current working directory is the active location in the filesystem. You can find the current working directory by using `pwd`.
 
@@ -75,7 +74,7 @@ pwd
 
 ```
 
-### What is an absolute path? Include an example
+## What is an absolute path? Include an example
 
 An absolute path is a path that includes the directory's parents, their parents, all the way to root. 
 
@@ -84,7 +83,7 @@ An absolute path is a path that includes the directory's parents, their parents,
 
 ```
 
-### What is a relative path? Include an example
+## What is a relative path? Include an example
 
 A relative path uses the current working directory as the starting path when using commands without referencing the absolute path.
 
@@ -94,7 +93,7 @@ pwd
 cat file.txt # resolves to /home/student/Documents/file.txt
 ```
 
-### What is the difference between “Your home directory” and “The home directory”?
+## What is the difference between “Your home directory” and “The home directory”?
 
 The home directory is the directory that holds all user subdirectories. Your home directory is your specific user's home directory. Your home directory is the default starting point for each shell session. 
 

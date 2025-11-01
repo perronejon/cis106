@@ -6,26 +6,32 @@
 
 ## Practice Screenshots
 
-### Managing Software Practice 1
+### Linux Filesystem
 
-#### DNF Search & Install
+#### Practice 1
 
 ![](q1.1.png)
 
-#### Manual page for application
+#### Practice 2
 
 ![](q1.2.png)
 
-#### Remove and clean
-
 ![](q1.3.png)
+
+![](q1.4.png)
+
+#### Practice 3
+
+![](q1.5.png)
+
+![](q1.6.png)
 
 ### Shell Scripting Practice 1
 
-#### Writing the Script
+#### env Variable practice
 
 ![](q2.1.png)
 
-#### Executing the script
+#### User variable practice
 
 ![](q2.2.png)
