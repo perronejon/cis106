@@ -15,27 +15,39 @@ total 3832
 -rw-r--r--. 1 student student      18 Nov  7  2024 .bash_logout
 -rw-r--r--. 1 student student     144 Nov  7  2024 .bash_profile
 ```
-> `-l` prints the details of each file, while `A` includes all files, even those starting with `.`, except the implied `.` and `..` 
+> `-l` prints the details of each file, while `A` includes all files, even those starting with `.`, except the implied `.` and `..`
+ 
+> `.` and `..` are navigational shortcuts used to represent current and parent directory respectively.
 
 ## pwd
 - print the working directory
 - useful to find the absolute path
   - used in tandem with `cd` to both orient and navigate
 
+Especially useful for navigation of projects or directory structures that are unfamiliar to the user. 
+
 ```
 pwd
-/home/student
+/home/student/.local/share/icons/Gruvbox # etc, making pwd useful for deep or complex directory structures 
 ```
 
 ## cd
 - changes the working directory
 - can use either absolute or relative path
+  - navigate from one side of filesystem to other
+
+
 
 ```
+# absolute path
 cd /home/student/Music
 cd ~/Music
 
-cd Music # Relative path from /home/student
+# relative path, assuming in $HOME
+cd Music
+
+# moving to another part of filesystem, using absolute path
+cd /var/log/akmods
 
 ```
 ## What is a variable?
@@ -44,34 +56,68 @@ A variable is a named container that holds data. They allow for reuse and dynami
 
 ## How do I use a variable?
 
-Variables are used to retrieve commonly used information. In order to define a user variable in a script 
+Variables are used to retrieve commonly used information. To use a variable, you start with the `$` character, followed by the name of the variable. 
+
 
 ## What is an environment variable?
 
 Environment variables are exported to the environment or the process's memory space. These variables are inherited by any child processes spawned by the process. The command `env` prints a view of all exported variables. 
 
+Conventionally, environment variables are fully capitalized. 
+```
+echo "The current shell is: $SHELL"
+The current shell is: /usr/bin/bash
+```
+
 ## What is a user defined variable?
 
-User defined variables are local to the current shell session. They are used temporarily, for loops, or for script-local configuration. 
+User defined variables are local to the current shell session. They are used temporarily, for loops, or for script-local tasks. 
+
+They are lower case by convention.
+
+```
+#!/bin/bash
+
+age=44
+firstname="Harold"
+
+echo $firstname $age
+
+```
+In terminal:
+```
+./identity.sh
+Harold 44
+
+echo $name
+
+# nothing, since user variable was only used in script and is not environment
+```
+
 
 ## What is the root directory?
 
-The root directory is the common origin of the Linux / UNIX filetree. All files on the Linux filesystem descend from the root directory. The root directory is denoted by a single forward slash, `/`. 
+The root directory is the common origin of the Linux / UNIX filetree. All files on the Linux filesystem descend from the root directory. The root directory is denoted by a single forward slash, `/`. It does not have a parent directory, making it the unique to all other directories. 
 
 It contains system directories such as `/home`, `/bin`, `/usr`, and `/bin`.
 
 ## What does “Parent Directory” mean?
 
-A parent directory is the directory one level up from the current location. Every file has a parent except for the root directory.
+A parent directory is the directory one level up from the current location. Every file has a parent except for the root directory. 
 
 ## What does “Current working directory” mean?
 
-The current working directory is the active location in the filesystem. You can find the current working directory by using `pwd`.
+The current working directory is the active location in the filesystem. You can find the current working directory by using `pwd`. Any command used without a specified directory defaults to the current directory. 
 
 ```
 pwd
-/home/student/Documents
+/home/student/Documents # current working directory
 
+ls # used without [FILE]
+file.docx
+note1.md
+note2.md
+document.pdf
 ```
 
 ## What is an absolute path? Include an example
@@ -79,18 +125,23 @@ pwd
 An absolute path is a path that includes the directory's parents, their parents, all the way to root. 
 
 ```
+realpath file.txt
 /home/student/Documents/file.txt
-
+# includes parents of each directory until root
 ```
 
 ## What is a relative path? Include an example
 
-A relative path uses the current working directory as the starting path when using commands without referencing the absolute path.
+A relative path assumes the current working directory as the starting path. It is implied the absolute path exists. It is easier to manage than using absolute paths each time a directory needs to be referenced.
 
 ```
-pwd
-# /home/student/Documents
-cat file.txt # resolves to /home/student/Documents/file.txt
+# from $HOME
+cd Videos/instructional
+
+# as opposed to
+
+cd /home/student/Videos/instructional
+
 ```
 
 ## What is the difference between “Your home directory” and “The home directory”?
