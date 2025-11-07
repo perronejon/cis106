@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>deliverable1.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="deliverable-1">Deliverable 1</h1>
+<h2 id="questions">Questions</h2>
+<h3 id="1-what-is-a-web-server">1. What is a web server?</h3>
+<p><img src="webclient.jpg" alt="webclient"></p>
+<p>A web server is the software that processes HTTP requests and serves web sites to clients. It runs on server hardware, either a physical or virtual machine, but the web server term itself usually refers to the software itself rather than the hardware it runs on.</p>
+<h3 id="2-what-are-some-different-web-server-applications">2. What are some different web server applications?</h3>
+<h4 id="apache">Apache</h4>
+<p><img src="apache.png" alt="apache"></p>
+<p>A free an open source web server that was initially released in 1995. Uses a Multi-Processing Module (MPM) system, different strategies for handling connections.</p>
+<ul>
+<li>prefork MPM: spawns individual processes for each event</li>
+<li>worker MPM: multiple threads for processes, memory efficient, handles multiple concurrent connections.</li>
+<li>event MPM: dedicates threads to active connections using events</li>
+</ul>
+<ul>
+<li>Website: https://apache.org</li>
+<li>Available for: Linux, Windows</li>
+<li>Latest Version: 2.4.65 Stable (released 2025-07-23)</li>
+</ul>
+<h4 id="nginx">nginx</h4>
+<p><img src="nginx.png" alt="ap2"></p>
+<p>nginx is a web server than can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache. It is free and open source and used for high flexibility and performance settings.</p>
+<ul>
+<li>Website: https://nginx.org/en/</li>
+<li>Available for: Linux, macOS, Windows</li>
+<li>Latest Version: 1.28.0 Stable (released 2025-04-23)</li>
+</ul>
+<h4 id="caddy">Caddy</h4>
+<p><img src="caddy.png" alt="ap3"></p>
+<p>Released in 2015, Written in Go, an efficient language for development and similar to the C language. HTTP/2 and HTTP/3 support out of the box.</p>
+<ul>
+<li>Website: https://caddyserver.com</li>
+<li>Available for: Linux, Windows (chocolatey &amp; scoop), macOS (homebrew)</li>
+<li>Latest Version:  2.10.0 Stable    (released 2025-4-18)</li>
+</ul>
+<h3 id="3-what-is-virtualization">3. What is virtualization?</h3>
+<p><img src="virtualization.jpg" alt="virtualization">
+Virtualization is a technology that allows the division of computing resources in order to run a virtual device on the host machine. The virtual device is allocated its own part of the host's resources, the CPU, RAM, and storage.</p>
+<h3 id="4-what-is-virtualbox">4. What is virtualbox?</h3>
+<p>Virtualbox is software offered by Oracle for x86-64 and ARM platforms. It was released under the terms of the GNU General Public license, and is free and open source, though the Extension Pack is proprietary software.</p>
+<h3 id="5-what-is-a-virtual-machine">5. What is a virtual machine?</h3>
+<p>A virtual machine is a software-based emulation of a physical computer that runs its own operating system and applications in isolation from the host system. The hypervisor allocates the host PC's hardware resources and presents them as virtualized resources. Can snapshot, clone, or delete the machine at will.</p>
+<h3 id="6-in-the-context-of-virtualization-what-does-host-machine-and-guest-machine-mean">6. In the context of virtualization, what does host machine and guest machine mean?</h3>
+<ul>
+<li>
+<p><strong>Host Machine:</strong> Physical computer in the virtualization process, runs the hypervisor.</p>
+</li>
+<li>
+<p><strong>Guest Machine:</strong> Virtual computer that borrows hardware resources: creates disk images to mimic storage, and runs on a virtual network through the host's network connection.</p>
+</li>
+</ul>
+<h3 id="7-what-is-debian">7. What is Debian?</h3>
+<p>Debian is a free operating system based on the Linux kernel using basic OS tools from the GNU project. It is one of the most common Linux distributions, most well known for its stability. Due to Debian being developed on a &quot;when it's ready&quot; schedule, it ensures that the amount of bugs and OS-breaking instabilities is as minimal as possible. This means that Debian is a top pick when choosing an OS to run for a server.</p>
+<h3 id="8-what-is-a-firewall">8. What is a firewall?</h3>
+<p>A firewall is a network security system that monitors and controls inbound and outbound traffic based on security rules set in the system. It acts as a barrier between trusted internal networks and untrusted external networks, filtering packets according to defined policies. It can be hardware based, software based, or both.</p>
+<p><img src="firewall.jpg" alt="Firewall"></p>
+<h3 id="9-what-is-ssh">9. What is SSH?</h3>
+<p>SSH stands for &quot;Secure Shell,&quot; an encrypted remote access protocol that replaced telnet. Uses public key cryptography, where the public key is placed on servers and the private key stays secret. Does tunneling, file transfers, and port forwarding.</p>
+<h3 id="10-what-is-an-ip-address">10. What is an IP Address?</h3>
+<p>An IP address is a unique numerical identifier assigned to each device on a network using Internet Protocol. It serves two primary functions: identifying the host network or network interface, and providing the location of the device in the network to route data packets between source and destination. Assigned by DHCP and can be in the IPv4 (32 bit) or IPv6 (128 bit) format.</p>
+<h3 id="11-what-is-a-network-mask">11. What is a network mask?</h3>
+<p>A network mask or subnet mask is how a computer defines which part of the IP address is the network portion and which is the host portion. Written in dotted decimal (255.255.255.0) or CIDR (/24) notation. /24 means first 24 bits are network, last 8 are host, giving 256 addresses. (254 useable)</p>
+<h3 id="12-what-is-a-port-in-the-context-of-networkingcomputers">12. What is a port? (in the context of networking/computers)</h3>
+<p>Endpoints on a network, it is a 16 bit number placed at the end of an IP address to define a specific service or process on a host. Ports in the lower range (0-1023) are reserved, such as 22 for SSH, 80 for HTTP, 443 for HTTPS, etc. IP is for routing to the machine, port routes to specific application.</p>
+<h3 id="13-what-is-port-forwarding">13. What is port forwarding?</h3>
+<p><img src="port-forwarding.png" alt="port forwarding"></p>
+<p>Port forwarding redirects a port address to another, most commonly used when making an internal network available to hosts externally through a network address translation (NAT) layer.</p>
+<h3 id="14-what-is-localhost-in-the-context-of-networkingcomputers">14. What is localhost? (in the context of networking/computers)</h3>
+<p>In the context of networking, localhost represents the own device's domain and loops traffic back to itself. Used for testing services without network involvement.</p>
+<h3 id="15-what-does-this-ip-address-represent-127001">15. What does this ip address represent 127.0.0.1?</h3>
+<p>127.0.0.1 represents the localhost, allowing the computer to communicate with itself. RFC 3330 defines it as &quot;this host on this network.&quot; Cannot be routed externally, packets with this destination get dropped at the first router that sees it.</p>
+<h3 id="16-what-is-git">16. What is Git?</h3>
+<p><img src="git-commands.png" alt="git commands">
+Git is a distributed version control software system allowing for version management of data or source code. It is most often used by developers to control source code. Tracks changes to files, maintains history, enables collaboration without overwriting work constantly.</p>
+<h3 id="17-what-is-github">17. What is GitHub?</h3>
+<p>Github is a developer platform owned by Microsoft using git as the version control, hosting open source development projects. Adds webui to git, pull requests, issues, and actions (CI/CD)</p>
+
+</body>
+</html>
