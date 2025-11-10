@@ -43,29 +43,41 @@ The use of `-f` is unprompted, making it dangerous as opposed to using `-r` by i
 ### Examples
 ```
 rm ~/Documents/oldfile.txt # removes oldfile.txt
+```
+Directories requiring `-r` flag:
+```
 rm ~/Documents/english # will not remove, will show error:
 rm: cannot remove 'english': Is a directory
-
-
 ```
 
 ## rmdir 
 ### Definition
-remove empty directory
+Remove an empty directory. 
+
 ### Usage / Formula
 
 ### Examples
 
 ## cp
 ### Definition
-Copy 
+Copy a source file or directory to 
 ### Usage / Formula
 
 ### Examples
 
 ## mv
 ### Definition
-Move
+Rename or move a source to a destination. 
 ### Usage / Formula
 
 ### Examples
+
+Backup before moving:
+
+```
+touch txt2.txt
+mv -b txt1.txt txt2.txt
+ls
+txt2.txt  txt2.txt~
+```
+
