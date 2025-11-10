@@ -20,4 +20,4 @@
 
 ## Challenge Question 2 - Web Development 
 
-![](q3.1)
+![](q3.1.gif)
