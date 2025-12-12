@@ -1,4 +1,5 @@
 # Notes 8
+
 ## File manipulation
 
 ### cat
@@ -59,8 +60,9 @@ head update-2025-7-15.log
 > Will print the first ten lines of the file `update-2025-7-15.log`
 
 ```
-head -n 20 
+head -n 4 verification.sh
 ```
+> Checks the first four lines of the shell script 
 
 ### tail
 
@@ -78,17 +80,38 @@ Seeing the end of logs, the last additions to the file in order.
 tail -f
 ```
 > `-f` follows the live output, printing the tail of a file as it is being written.
+
+```
+tail -5 logs.txt
+```
+> Views the end of logs
+
 ### cut
 
 #### Definition
 
-Slices files by their delimiters, with spaces being the tool's default. 
+Slices files by their **delimiters**, with spaces being the tool's default. 
 
 #### Usage
 
 Used when needing to see one field in a file's set.
 
 #### Examples
+
+```
+cut -d',' -f3 users.csv
+```
+> Prints the third field in a `.csv` file
+
+```
+cut -c5-15 log.txt
+```
+> Prints from the 5th to 15th character in position
+
+```
+cut -d' ' -f1 access.log
+```
+> Takes the first field from an access log
 
 ### sort
 
