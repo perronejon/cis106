@@ -7,17 +7,20 @@
 **G**lobally match a **r**egular **e**xpression, and **p**rints the output. 
 
 #### Usage/Formula
-Use to search a file for a string. 
+Use to search a file or command output for a string. 
+
 
 #### Examples
 
 
 ```
+grep "admin" access.log
 ```
->
+> Finds every instance of the regular expression "admin" in the access log file.
 
 
 ```
+grep 
 ```
 >
 
@@ -33,10 +36,13 @@ Programming language meant for complex text processing.
 #### Usage/Formula
 Used for pattern matching and data manipulation, as opposed to cut which is limited to simple text manipulation.
 
+Uses whitespace by default for separation between columns, can specify field delimiters using the `-F` option.
+
 #### Examples
 
 
 ```
+awk -F '{print $5}'  
 ```
 >
 
