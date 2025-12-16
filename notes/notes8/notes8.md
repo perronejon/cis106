@@ -72,7 +72,7 @@ Prints the file's last ten lines by default, user defined number will produce fr
 
 #### Usage
 
-Seeing the end of logs, the last additions to the file in order.
+Seeing the end of logs, the last additions to the file in order. Allows for live viewing of log files as they are written into.
 
 #### Examples
 
@@ -82,9 +82,14 @@ tail -f
 > `-f` follows the live output, printing the tail of a file as it is being written.
 
 ```
+tail -n 20 -f requests.log
+```
+> last 20 lines, then follows in that window
+
+```
 tail -5 logs.txt
 ```
-> Views the end of logs
+> Views the end of logs, `-5` is BSD syntax, `-n5` and `-n 5` are same 
 
 ### cut
 
