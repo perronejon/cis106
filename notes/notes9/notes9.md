@@ -179,6 +179,6 @@ lspci | grep -i "ethernet" >> env_hw.txt
 ```
 awk -F',' -k '$9 == "APPROVED" {print $5,$6,$9}' new_users.csv >> whitelist.csv 
 ```
->> Logically prints lines if `APPROVED` in field `$9` in `new_users.csv` file
->> Appends to whitelist.csv
+> Logically prints lines if `APPROVED` in field `$9` in `new_users.csv` file
+> Appends to whitelist.csv
 
