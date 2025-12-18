@@ -46,6 +46,15 @@ Released in 2015, Written in Go, an efficient language for development and simil
 * Available for: Linux, Windows (chocolatey & scoop), macOS (homebrew)
 * Latest Version:  2.10.0 Stable    (released 2025-4-18)
 
+#### Traefik
+
+![traefik](traefik.jpg)
+
+Reverse proxy that dynamically discovers services through labels in an orchestrator. Allows for many services to be run and routed through the reverse proxy. Written in Go with a middleware system that handles auth, rate limits, headers, and redirects.
+
+* Website: https://traefik.io/
+* Available for: Linux, Windows, macOS, FreeBSD, OpenBSD
+* Latest Version: 3.6.5 Stable (released 2025-12-16)
 
 ### 3. What is virtualization?
 
@@ -61,6 +70,7 @@ Virtualbox is software offered by Oracle for x86-64 and ARM platforms. It was re
 A virtual machine is a software-based emulation of a physical computer that runs its own operating system and applications in isolation from the host system. The hypervisor allocates the host PC's hardware resources and presents them as virtualized resources. Can snapshot, clone, or delete the machine at will.
 
 ### 6. In the context of virtualization, what does host machine and guest machine mean?
+
 * **Host Machine:** Physical computer in the virtualization process, runs the hypervisor. 
 
 * **Guest Machine:** Virtual computer that borrows hardware resources: creates disk images to mimic storage, and runs on a virtual network through the host's network connection.
